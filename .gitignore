@@ -2,4 +2,5 @@
 *.out
 *.a
 .cache/
+.DS_store
 compile_commands.json
