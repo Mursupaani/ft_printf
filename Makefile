@@ -15,7 +15,20 @@ HEADER		= libftprintf.h
 LIBFT		= libft/libft.a
 LIBFT_H		= libft/libft.h
 
-SRCS		= ft_printf.c ft_print_char.c ft_print_percentage.c
+SRCS		= ft_printf.c \
+			  ft_print_char.c \
+			  ft_print_percentage.c \
+			  ft_print_string.c \
+			  ft_print_pointer.c \
+			  ft_print_decimal.c \
+			  ft_print_integer.c \
+			  ft_print_unsigned_decimal.c \
+			  ft_print_lowercase_hex.c \
+			  ft_print_uppercase_hex.c \
+			  ft_hex_get_most_significant_char.c \
+			  ft_hex_get_least_significant_char.c \
+			  ft_print_hex_without_leading_zeros.c \
+			  ft_number_to_hex.c
 
 OBJS		= $(SRCS:%.c=%.o)
 BONUS		= 

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_hex_get_most_significant_char.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/05/05 18:13:18 by anpollan          #+#    #+#             */
+/*   Updated: 2025/05/05 19:07:37 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_print_percentage()
+char	get_most_significant_byte(unsigned char byte)
 {
-	write(1, "%", 1);
-	return (1);
+	unsigned char	c;
+
+	c = byte / 16 + 48;
+	if (ft_isdigit(c))
+		return (c);
+	else
+		c += 39;
+	return (c);
 }

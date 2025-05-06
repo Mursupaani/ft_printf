@@ -12,11 +12,11 @@
 
 #include "libftprintf.h"
 
-int	print_char(va_list args)
+// Print a single character.
+int	ft_print_char(va_list args)
 {
 	char	c;
 
 	c = va_arg(args, int);
-	write(1, &c, 1);	
-	return (1);
+	return(write(1, &c, 1));
 }

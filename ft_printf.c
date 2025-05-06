@@ -11,15 +11,11 @@
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stddef.h>
-#include <stdio.h>
 
 static int	check_flag(int c);
 static int	choose_conversion(int conversion, va_list args);
 
-// static int	count_arguments(const char *format); //DONT NEED THIS?
-
-// Upon successful return, these functions return the number of bytes
+// Upon successful return, ft_printf function returns the number of bytes
 // printed (excluding the null byte used to end output to strings).
 int	ft_printf(const char *format, ...)
 {
@@ -45,7 +41,6 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	bytes_printed += i;
 	return (bytes_printed);
 }
 
@@ -75,31 +70,25 @@ static int	check_flag(int c)
 
 static int	choose_conversion(int conversion, va_list args)
 {
-	size_t	bytes_printed;
+	int	bytes_printed;
 
 	bytes_printed = 0;
 	if (conversion == CHAR)
 		bytes_printed = ft_print_char(args);
 	else if (conversion == STR)
-			bytes_printed = ft_print_string(args);
+		bytes_printed = ft_print_string(args);
 	else if (conversion == PTR)
-		return (2);
-		//Print the void * pointer in hexadecimal char
+		bytes_printed = ft_print_pointer(args);
 	else if (conversion == DEC)
-		return (3);
-		//Print a decmal number in base 10
+		bytes_printed = ft_print_decimal(args);
 	else if (conversion == INT)
-		return (4);
-		//Print an integer in base 10
+		bytes_printed = ft_print_integer(args);
 	else if (conversion == UINT)
-		return (5);
-		//Print an unsigned decimal base 10 number
+		bytes_printed = ft_print_unsigned_decimal(args);
 	else if (conversion == L_HEX)
-		return (6);
-		//Print a number in hexadecimal base16 lowercase char
+		bytes_printed = ft_print_lowercase_hex(args);
 	else if (conversion == U_HEX)
-		return (7);
-		//Print a number in hexadecimal base16 uppercase char
+		bytes_printed = ft_print_uppercase_hex(args);
 	else if (conversion == PERC)
 		bytes_printed = ft_print_percentage();
 	// Else throw an error?

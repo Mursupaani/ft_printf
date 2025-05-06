@@ -3,4 +3,5 @@
 *.a
 .cache/
 .DS_store
+./printfTester/
 compile_commands.json
