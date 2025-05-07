@@ -6,15 +6,12 @@
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 14:45:08 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/07 12:24:45 by anpollan         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:04:17 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "libftprintf.h"
 
 typedef enum format_conversion
