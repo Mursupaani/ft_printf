@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 //Print a number in hexadecimal base16 lowercase char
 int	ft_print_lowercase_hex(va_list args)

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= libftprintf.a
-HEADER		= libftprintf.h
+HEADER		= ft_printf.h libftprintf.h
 LIBFT		= libft/libft.a
 LIBFT_H		= libft/libft.h
 

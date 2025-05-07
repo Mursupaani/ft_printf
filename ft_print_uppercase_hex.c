@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 //Print a number in hexadecimal base16 uppercase char
 int	ft_print_uppercase_hex(va_list args)
