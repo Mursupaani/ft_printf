@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_get_most_significant_char.c                 :+:      :+:    :+:   */
+/*   tests.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 18:13:18 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 19:07:37 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/29 16:02:14 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/30 12:24:51 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
 
-#include "libftprintf.h"
-
-char	get_most_significant_byte(unsigned char byte)
-{
-	unsigned char	c;
-
-	c = byte / 16 + 48;
-	if (ft_isdigit(c))
-		return (c);
-	else
-		c += 39;
-	return (c);
-}
+void	test_chars(int min, int max);
+void	test_strs(void);
+void	test_ptrs(void);
+void	test_ints(void);
+void	test_uints(void);
+void	test_hexes(void);
+void	test_basic(void);

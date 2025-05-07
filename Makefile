@@ -6,7 +6,7 @@
 #    By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/28 13:18:29 by anpollan          #+#    #+#              #
-#    Updated: 2025/04/30 15:08:22 by anpollan         ###   ########.fr        #
+#    Updated: 2025/05/06 14:20:32 by anpollan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,14 +25,9 @@ SRCS		= ft_printf.c \
 			  ft_print_unsigned_decimal.c \
 			  ft_print_lowercase_hex.c \
 			  ft_print_uppercase_hex.c \
-			  ft_hex_get_most_significant_char.c \
-			  ft_hex_get_least_significant_char.c \
-			  ft_print_hex_without_leading_zeros.c \
-			  ft_number_to_hex.c
+			  ft_print_num_in_hex.c
 
 OBJS		= $(SRCS:%.c=%.o)
-BONUS		= 
-BONUS_OBJS	= $(BONUS:%.c=%.o)
 CC			= cc
 C_FLAGS		= -Wall -Wextra -Werror -c -g
 AR			= ar
@@ -50,20 +45,14 @@ $(NAME): $(OBJS) $(LIBFT)
 $(LIBFT): 
 	$(MAKE) -C libft
 
-bonus: .bonus
-
-.bonus: $(NAME) $(BONUS_OBJS)
-	$(AR) $(AR_FLAGS) $(NAME) $(BONUS_OBJS)
-	touch .bonus
-
 clean:
-	rm -rf $(OBJS) $(BONUS_OBJS)
+	rm -rf $(OBJS)
 	$(MAKE) -C libft clean
 	
 fclean:	clean
-	rm -rf $(NAME) .bonus compile_commands.json
+	rm -rf $(NAME) compile_commands.json
 	$(MAKE) -C libft fclean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

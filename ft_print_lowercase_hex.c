@@ -16,10 +16,10 @@
 int	ft_print_lowercase_hex(va_list args)
 {
 	int				bytes_printed;
-	char			*num_in_hex;
+	unsigned int	num;
 
-	num_in_hex = ft_number_to_hex(args, INT);
-	bytes_printed = ft_print_hex_without_leading_zeros(num_in_hex);
-	free(num_in_hex);
+	num = va_arg(args, unsigned int);
+	bytes_printed = 0;
+	ft_print_num_in_hex(num, &bytes_printed, L_HEX);
 	return (bytes_printed);
 }

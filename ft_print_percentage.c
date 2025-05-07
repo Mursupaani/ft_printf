@@ -14,6 +14,5 @@
 
 int	ft_print_percentage()
 {
-	write(1, "%", 1);
-	return (1);
+	return (write(1, "%", 1));
 }

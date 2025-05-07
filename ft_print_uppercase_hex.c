@@ -12,29 +12,14 @@
 
 #include "libftprintf.h"
 
-static void	str_to_upper(char *str);
-
 //Print a number in hexadecimal base16 uppercase char
 int	ft_print_uppercase_hex(va_list args)
 {
-	int		bytes_printed;
-	char	*num_in_hex;
+	int				bytes_printed;
+	unsigned int	num;
 
-	num_in_hex = ft_number_to_hex(args, INT);
-	str_to_upper(num_in_hex);
-	bytes_printed = ft_print_hex_without_leading_zeros(num_in_hex);
-	free(num_in_hex);
+	num = va_arg(args, unsigned int);
+	bytes_printed = 0;
+	ft_print_num_in_hex(num, &bytes_printed, U_HEX);
 	return (bytes_printed);
-}
-
-static void	str_to_upper(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		str[i] = ft_toupper(str[i]);
-		i++;
-	}
 }

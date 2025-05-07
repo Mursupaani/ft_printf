@@ -34,6 +34,8 @@ int	ft_printf(const char *format, ...)
 			conversion_type = check_flag(format[i + 1]);
 			if (conversion_type != ERR)
 				bytes_printed += choose_conversion(conversion_type, args);
+			else
+				bytes_printed += ft_print_percentage();
 			i++;
 		}
 		else
@@ -64,8 +66,8 @@ static int	check_flag(int c)
 		return (U_HEX);
 	else if (c == '%')
 		return (PERC);
-	// Else throw an error?
-	return (ERR);
+	else
+		return (ERR);
 }
 
 static int	choose_conversion(int conversion, va_list args)
@@ -91,29 +93,5 @@ static int	choose_conversion(int conversion, va_list args)
 		bytes_printed = ft_print_uppercase_hex(args);
 	else if (conversion == PERC)
 		bytes_printed = ft_print_percentage();
-	// Else throw an error?
 	return (bytes_printed);
 }
-
-/*
-static int	count_arguments(const char *format)
-{
-	int	count;
-
-	count = 0;
-	while (*format)
-	{
-		if (*format == '%')
-		{
-			if (*format + 1 == 'c' || *format + 1 == 's'
-				|| *format + 1 == 'p' || *format + 1 == 'd'
-				|| *format + 1 == 'i' || *format + 1 == 'u'
-				|| *format + 1 == 'x' || *format + 1 == 'X')
-			count++;
-			// ELSE THROW AN ERROR?
-		}
-		format++;
-	}
-	return (count);
-}
-*/

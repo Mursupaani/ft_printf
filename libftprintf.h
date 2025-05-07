@@ -41,9 +41,6 @@ int		ft_print_integer(va_list args);
 int		ft_print_unsigned_decimal(va_list args);
 int		ft_print_lowercase_hex(va_list args);
 int		ft_print_uppercase_hex(va_list args);
-char	get_most_significant_byte(unsigned char byte);
-char	get_least_significant_byte(unsigned char byte);
-int		ft_print_hex_without_leading_zeros(char *hex_str);
-char	*ft_number_to_hex(va_list args, int num_type);
+void	ft_print_num_in_hex(unsigned int num, int *bytes_printed, int conversion);
 
 #endif
