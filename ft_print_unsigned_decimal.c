@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	count_uint_digits(unsigned int n);
 

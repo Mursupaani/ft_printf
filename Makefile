@@ -11,9 +11,7 @@
 # **************************************************************************** #
 
 NAME		= libftprintf.a
-HEADER		= libftprintf.h
-LIBFT		= libft/libft.a
-LIBFT_H		= libft/libft.h
+HEADER		= libftprintf.h ft_printf.h
 
 SRCS		= ft_printf.c \
 			  ft_print_char.c \
@@ -33,17 +31,16 @@ C_FLAGS		= -Wall -Wextra -Werror -c -g
 AR			= ar
 AR_FLAGS	= -rcs
 
-# CFLAGeihin lisää -Llibft -llibft.a
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
-	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(LIBFT)
+$(NAME): $(OBJS)
+	@$(MAKE) -C libft
+	@cp libft/libft.a .
+	@mv libft.a $(NAME)
+	$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
 
 %.o: %.c $(HEADER) $(LIBFT_H)
 	$(CC) $(C_FLAGS) $< -o $@
-
-$(LIBFT): 
-	$(MAKE) -C libft
 
 clean:
 	rm -rf $(OBJS)
