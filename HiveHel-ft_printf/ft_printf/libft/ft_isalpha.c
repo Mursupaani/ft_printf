@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/14 16:45:54 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/16 11:11:16 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-int	ft_print_percentage()
+int	ft_isalpha(int c)
 {
-	return (write(1, "%", 1));
+	int	ret;
+
+	ret = 0;
+	if (c >= 'A' && c <= 'Z')
+		ret = 1;
+	if (c >= 'a' && c <= 'z')
+		ret = 1;
+	return (ret);
 }

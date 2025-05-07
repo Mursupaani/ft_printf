@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/15 11:14:24 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/16 10:49:05 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "libftprintf.h"
-
-int	ft_print_percentage()
+void	*ft_memset(void *s, int c, size_t n)
 {
-	return (write(1, "%", 1));
+	size_t			counter;
+	unsigned char	*temp;
+
+	counter = 0;
+	temp = (unsigned char *)s;
+	while (counter < n)
+	{
+		temp[counter] = (unsigned char)c;
+		counter++;
+	}
+	return (s);
 }

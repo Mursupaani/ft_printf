@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_lowercase_hex.c                           :+:      :+:    :+:   */
+/*   write_uint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 14:55:00 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 14:56:41 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/28 16:04:01 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/28 16:23:52 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include "libft/libft.h"
 
-//Print a number in hexadecimal base16 lowercase char
-int	ft_print_lowercase_hex(va_list args)
+int	write_uint(unsigned int u)
 {
-	int				bytes_printed;
-	unsigned int	num;
+	char	*temp;
+	int		ret;
 
-	num = va_arg(args, unsigned int);
-	bytes_printed = 0;
-	ft_print_num_in_hex(num, &bytes_printed, L_HEX);
-	return (bytes_printed);
+	temp = ft_utoa(u);
+	ret = (write(1, temp, ft_strlen(temp)));
+	free(temp);
+	return (ret);
 }

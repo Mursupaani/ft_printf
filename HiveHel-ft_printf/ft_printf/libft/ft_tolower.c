@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_get_most_significant_char.c                 :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 18:13:18 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 19:07:37 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/15 11:03:41 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/16 11:29:28 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-char	get_most_significant_byte(unsigned char byte)
+int	ft_tolower(int c)
 {
-	unsigned char	c;
-
-	c = byte / 16 + 48;
-	if (ft_isdigit(c))
-		return (c);
-	else
-		c += 39;
+	if ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z')
+		return (c + ('a' - 'A'));
 	return (c);
 }

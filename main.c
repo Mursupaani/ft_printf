@@ -15,6 +15,8 @@ int	main(void)
 	int				bytes_printed;
 
 	ft_printf("MY FUNCTION:\n");
+	bytes_printed = ft_printf("%%\n");
+	ft_printf("%d\n", bytes_printed);
 	bytes_printed = ft_printf("%i\n", s_int_min);
 	ft_printf("%d\n", bytes_printed);
 	bytes_printed = ft_printf("%i\n", s_int_min);
@@ -47,6 +49,8 @@ int	main(void)
 	ft_printf("\n");
 	ft_printf("ORIGINAL FUNCTION:\n");
 
+	bytes_printed = printf("%%\n");
+	printf("%d\n", bytes_printed);
 	bytes_printed = printf("%i\n", s_int_min);
 	printf("%d\n", bytes_printed);
 	bytes_printed = printf("%i\n", s_int_min);

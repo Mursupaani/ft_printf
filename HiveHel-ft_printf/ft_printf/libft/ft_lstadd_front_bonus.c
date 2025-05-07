@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/19 15:14:47 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/19 16:35:36 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "libftprintf.h"
-
-int	ft_print_percentage()
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return (write(1, "%", 1));
+	new->next = (*lst);
+	*lst = new;
+	return ;
 }

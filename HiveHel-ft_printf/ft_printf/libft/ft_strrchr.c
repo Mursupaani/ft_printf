@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/15 12:22:48 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/24 14:07:36 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "libftprintf.h"
-
-int	ft_print_percentage()
+char	*ft_strrchr(const char *s, int c)
 {
-	return (write(1, "%", 1));
+	char	*ret;
+
+	ret = NULL;
+	while (*s != '\0')
+	{
+		if ((unsigned char)*s == (unsigned char)c)
+			ret = (char *)s;
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (ret);
 }

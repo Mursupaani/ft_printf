@@ -19,6 +19,8 @@ int	ft_print_string(va_list args)
 	int		bytes_printed;;
 
 	str = va_arg(args, char *);
+	if (str == NULL)
+		return(write(1, "(null)", 6));
 	bytes_printed = 0;
 	while (*str)
 	{

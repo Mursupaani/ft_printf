@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_get_least_significant_char.c                :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 18:15:48 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 19:07:51 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/15 16:49:48 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/21 15:04:06 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "libftprintf.h"
-
-char	get_least_significant_byte(unsigned char byte)
+char	*ft_strdup(const char *s)
 {
-	unsigned char	c;
+	size_t	len;
+	char	*ret;
 
-	c = byte % 16 + 48;
-	if (ft_isdigit(c))
-		return (c);
-	else
-		c += 39;
-	return (c);
+	len = ft_strlen(s);
+	ret = malloc(len + 1);
+	if (ret == NULL)
+		return (ret);
+	*ret = '\0';
+	ft_strlcpy(ret, s, len + 1);
+	return (ret);
 }

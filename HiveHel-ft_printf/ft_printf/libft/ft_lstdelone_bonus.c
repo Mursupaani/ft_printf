@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_percentage.c                              :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nraatika <nraatika@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 14:12:11 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/02 14:15:15 by anpollan         ###   ########.fr       */
+/*   Created: 2025/04/19 15:47:38 by nraatika          #+#    #+#             */
+/*   Updated: 2025/04/24 12:43:19 by nraatika         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
-int	ft_print_percentage()
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	return (write(1, "%", 1));
+	if (lst->content != NULL)
+		del(lst->content);
+	free(lst);
+	return ;
 }

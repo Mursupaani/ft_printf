@@ -12,19 +12,29 @@
 
 #include "libftprintf.h"
 
+static void	ft_print_ptr_in_hex(unsigned long num, int *bytes_printed);
+
 //Print the void * pointer in hexadecimal char
 int	ft_print_pointer(va_list args)
 {
-	int		bytes_printed;
-	char	*ptr_in_hex;
-	void	*ptr;
+	int				bytes_printed;
+	void			*ptr;
 
 	ptr = va_arg(args, void *);
 	if (!ptr)
 		return (write(1, "(nil)", 5));
 	bytes_printed = write(1, "0x", 2);
-	ptr_in_hex = ft_number_to_hex(args, PTR);
-	bytes_printed += ft_print_hex_without_leading_zeros(ptr_in_hex);
-	free(ptr_in_hex);
+	ft_print_ptr_in_hex((unsigned long)ptr, &bytes_printed);
 	return (bytes_printed);
+}
+static void	ft_print_ptr_in_hex(unsigned long num, int *bytes_printed)
+{
+	char	*base = "0123456789abcdef";
+	char	hex;
+
+	if (num >= 16)
+		ft_print_ptr_in_hex(num / 16, bytes_printed);
+	hex = base[num % 16];
+	write(1, &hex, 1);
+	*bytes_printed = *bytes_printed + 1;
 }
