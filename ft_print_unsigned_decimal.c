@@ -6,7 +6,7 @@
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:52:00 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 14:53:11 by anpollan         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:49:05 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 static int	count_uint_digits(unsigned int n);
 
-//Print an unsigned decimal base 10 number
-// CHECK ERROR HANDLING
 int	ft_print_unsigned_decimal(va_list args)
 {
 	char			*num_str;
@@ -25,7 +23,7 @@ int	ft_print_unsigned_decimal(va_list args)
 
 	num = va_arg(args, unsigned int);
 	end = count_uint_digits(num);
-	num_str = (char *)malloc(sizeof(char) * end + 1);
+	num_str = (char *)malloc(sizeof(char) * (end + 1));
 	if (!num_str)
 		return (0);
 	num_str[end--] = '\0';

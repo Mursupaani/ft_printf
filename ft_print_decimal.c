@@ -6,13 +6,12 @@
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:32:17 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 14:38:08 by anpollan         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:48:56 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//Print a decmal number in base 10
 int	ft_print_decimal(va_list args)
 {
 	int		num;

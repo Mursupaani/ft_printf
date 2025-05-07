@@ -6,13 +6,12 @@
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:58:40 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 15:00:54 by anpollan         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:49:14 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//Print a number in hexadecimal base16 uppercase char
 int	ft_print_uppercase_hex(va_list args)
 {
 	int				bytes_printed;

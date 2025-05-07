@@ -6,13 +6,12 @@
 /*   By: anpollan <anpollan@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:48:08 by anpollan          #+#    #+#             */
-/*   Updated: 2025/05/05 14:50:18 by anpollan         ###   ########.fr       */
+/*   Updated: 2025/05/07 14:49:01 by anpollan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-//Print an integer in base 10
 int	ft_print_integer(va_list args)
 {
 	int		num;
