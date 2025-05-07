@@ -12,11 +12,11 @@
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft/libft.h"
 
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *format, ...);
 
 #endif

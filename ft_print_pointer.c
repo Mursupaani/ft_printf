@@ -14,7 +14,6 @@
 
 static void	ft_print_ptr_in_hex(unsigned long num, int *bytes_printed);
 
-//Print the void * pointer in hexadecimal char
 int	ft_print_pointer(va_list args)
 {
 	int				bytes_printed;
@@ -27,11 +26,13 @@ int	ft_print_pointer(va_list args)
 	ft_print_ptr_in_hex((unsigned long)ptr, &bytes_printed);
 	return (bytes_printed);
 }
+
 static void	ft_print_ptr_in_hex(unsigned long num, int *bytes_printed)
 {
-	char	*base = "0123456789abcdef";
+	char	*base;
 	char	hex;
 
+	base = "0123456789abcdef";
 	if (num >= 16)
 		ft_print_ptr_in_hex(num / 16, bytes_printed);
 	hex = base[num % 16];
